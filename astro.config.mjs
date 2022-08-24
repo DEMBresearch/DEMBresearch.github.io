@@ -10,6 +10,5 @@ export default defineConfig({
   // Enable React for the Algolia search component.
   react(),
 ],
-  site: `https://dembresearch.github.io/`,
-  base: '/demb_docs'
+  site: `https://DEMBresearch.github.io/`
 });
