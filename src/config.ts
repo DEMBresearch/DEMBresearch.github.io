@@ -35,13 +35,11 @@ export const ALGOLIA = {
 export const SIDEBAR = {
 	en: [
 		{ text: '', header: true },
-		{ text: 'Section Header', header: true },
+		{ text: 'DEMB Servers', header: true },
 		{ text: 'Introduction', link: 'en/introduction' },
-		{ text: 'Page 2', link: 'en/page-2' },
-		{ text: 'Page 3', link: 'en/page-3' },
+		{ text: 'Available resources', link: 'en/page-2' },
+		{ text: 'Available software', link: 'en/page-3' },
 		{ text: 'Databases', link: 'en/databases' },
-
-		{ text: 'Another Section', header: true },
-		{ text: 'Page 4', link: 'en/page-4' },
+		{ text: 'FAQ', link: 'en/page-2' },
 	],
 };
