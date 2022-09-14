@@ -37,10 +37,10 @@ export const SIDEBAR = {
 		{ text: '', header: true },
 		{ text: 'DEMB Servers', header: true },
 		{ text: 'Home', link: 'en/introduction' },
-		{ text: 'Available resources', link: 'en/page-2' },
+		{ text: 'Available resources', link: 'en/resources' },
 		{ text: 'Available software', link: 'en/page-3' },
 		{ text: 'Databases', link: 'en/databases' },
 		{ text: 'Common problems', link: 'en/problems' },
-		{ text: 'FAQ', link: 'en/page-2' },
+		{ text: 'FAQ', link: 'en/faq' },
 	],
 };
