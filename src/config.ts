@@ -39,6 +39,7 @@ export const SIDEBAR = {
 		{ text: 'Home', link: 'en/introduction' },
 		{ text: 'Available resources', link: 'en/resources' },
 		{ text: 'Databases', link: 'en/databases' },
+		{ text: 'Software', link: 'en/software' },
 		{ text: 'Common problems', link: 'en/problems' },
 		{ text: 'FAQ', link: 'en/faq' },
 	],
