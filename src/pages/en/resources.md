@@ -45,7 +45,7 @@ layout: ../../layouts/MainLayout.astro
 | Component          | Specification                               |
 |--------------------|---------------------------------------------|
 | CPU                | Intel Xeon CPU E5-2630 v4 10C/20T @ 2.20GHz |
-| RAM                | 512 GB                                      |
+| RAM                | 64 GB                                       |
 | Storage            | 2 x 12 TB HDD (RAID 1) at `/`               |
 | Network            | 1 Gbps                                      |
 | OS                 | Ubuntu 20.04 LTS                            |
