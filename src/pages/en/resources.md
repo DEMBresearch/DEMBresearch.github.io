@@ -8,6 +8,7 @@ layout: ../../layouts/MainLayout.astro
 * [Dexter](#dexter)
 * [MRV](#mrv)
 * [Deedee](#deedee)
+* [HPC1-3](#HPC1-3)
 
 ## Server configuration
 
@@ -52,3 +53,30 @@ layout: ../../layouts/MainLayout.astro
 | GPU                | ---                                         |
 | RAID controller    | Intel C610/X99                              |
 | Network controller | Intel I210                                  |
+
+### HPC1-3
+
+| Component          | Specification                               |
+|--------------------|---------------------------------------------|
+| CPU                | AMD EPYC 7443P 24C/48T @ 4.60GHz |
+| RAM                | 128 GB                                       |
+| Storage            | 2 x 12 TB HDD (RAID 1)              |
+| Network            | 1 Gbps                                      |
+| OS                 | Ubuntu 20.04 LTS                            |
+| GPU                | ---                                         |
+| RAID controller    | LSI MegaRAID 12GSAS/PCIe Secure SAS39xx                            |
+| Network controller | 2 x NetXtreme BCM5720                                   |
+
+### DEMB_Storage
+
+| Component          | Specification                               |
+|--------------------|---------------------------------------------|
+| CPU                | Intel Xeon Silver 4309Y 8C/16T @ 2.80GHz |
+| RAM                | 64 GB                                       |
+| Storage            | 3 x 12 TB HDD (RAID 5) + 1 hot spare        |
+| Network            | 1 Gbps                                      |
+| OS                 | Ubuntu 22.04 LTS                            |
+| GPU                | ---                                         |
+| RAID controller    | BOSS S2                                     |
+| RAID controller    | DELL PERC H745                              |
+| Network controller | Broadcom 57412 10 GbE SFP+                  |

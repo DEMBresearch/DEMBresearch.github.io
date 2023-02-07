@@ -38,6 +38,7 @@ export const SIDEBAR = {
 		{ text: 'DEMB Servers', header: true },
 		{ text: 'Home', link: 'en/introduction' },
 		{ text: 'Available resources', link: 'en/resources' },
+		{ text: 'Cluster', link: 'en/cluster' },
 		{ text: 'Databases', link: 'en/databases' },
 		{ text: 'Software', link: 'en/software' },
 		{ text: 'Common problems', link: 'en/problems' },

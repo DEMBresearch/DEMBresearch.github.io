@@ -15,6 +15,6 @@ All available databases that are present on DEMB servers can be found here. If y
 
 | **Tool** | **Version** | **Updated** | **Path** |
 |:--------:|:-----------:|:-----------:|:--------:|
-| **AMRFinder** | 2022-12-19.1 | 06.02.2023 | /nfs/storage/databases/amrfinder/ |
+|  |  |  |  |
 |          |             |             |          |
 |          |             |             |          |
