@@ -4,13 +4,12 @@ description: Software
 layout: ../../layouts/MainLayout.astro
 ---
 
-## Tools created by the team
+## Software available in shared locations
 
-### MAISEN
 
-### UniPriVal
+|  Name   | Version |        Location         | Maintainer |
+|:-------:|---------|:-----------------------:|:----------:|
+| DIAMOND | 0.2.1   | /nfs/software/diamond/* |     KC     |
+| PhiSpy  | 1       | /nfs/software/phispy/*  |     PD     |
 
-### LCPDb-ARG
-
-### LCPDb-MET
 
