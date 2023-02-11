@@ -1,6 +1,6 @@
 export const SITE = {
 	title: 'DEMB docs',
-	description: 'Your website description.',
+	description: 'Documentation for using the DEMB server cluster',
 	defaultLanguage: 'en_US',
 };
 
