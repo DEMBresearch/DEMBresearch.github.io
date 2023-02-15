@@ -1,6 +1,6 @@
 export const SITE = {
 	title: 'DEMB docs',
-	description: 'Your website description.',
+	description: 'Documentation for using the DEMB server cluster',
 	defaultLanguage: 'en_US',
 };
 
@@ -26,11 +26,11 @@ export const GITHUB_EDIT_URL = `https://github.com/DEMBresearch/DEMBresearch.git
 
 // Uncomment this to enable site search.
 // See "Algolia" section of the README for more information.
-export const ALGOLIA = {
-  indexName: 'XXXXXXXXXX',
-  appId: 'XXXXXXXXXX',
-  apiKey: 'XXXXXXXXXX',
-}
+// export const ALGOLIA = {
+//   indexName: 'XXXXXXXXXX',
+//   appId: 'XXXXXXXXXX',
+//   apiKey: 'XXXXXXXXXX',
+// }
 
 export const SIDEBAR = {
 	en: [
