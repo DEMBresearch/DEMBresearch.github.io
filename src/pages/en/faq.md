@@ -3,8 +3,29 @@ title: FAQ
 description: Frequently asked questions
 layout: ../../layouts/MainLayout.astro
 ---
+## 1. Where do I store my files?
 
-## 1. Installing `conda` and `mamba`
+In general, the use of `/home` should be reduced to minimum, as storage there is limited. 
+It's recommended to use either `/media/storage` on compute nodes or `/nfs/` storage
+
+Each user has access to 2 private directories:
+* `/home/<user>` - Separate on each node
+* `/nfs/users/<user>` - Shared between nodes
+
+By default, you should keep any files that do not need to be shared between nodes in your home folder on each node.
+
+If you need to share files between nodes, then using `nfs` is the right way to go.
+
+## 2. Where do I back up my files? Where can I store them when I no longer need them?
+
+Since storage on `/home` partition of all nodes is limited, data should not be stored there long-term.
+
+The proper solution for storage is to use one of:
+* `/media/storage` for keeping files locally on compute nodes (`hpc[1-3]`)
+* `/media/storage` on storage node for long-term storage and backups
+* `/nfs/storage` for keeping files shared between all nodes
+
+## 3. Installing `conda` and `mamba`
 
 To install `conda` on any of the servers, run:
 
@@ -12,6 +33,8 @@ To install `conda` on any of the servers, run:
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 ```
+
+For convenience, you can install `conda` somewhere in your `/nfs/users/<user>` directory, so that you have access to your environments from all nodes.
 
 To learn more about `conda`, visit [official documentation](https://docs.conda.io/en/latest/) or [conda cheat sheet](https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html).
 
@@ -23,7 +46,7 @@ conda install mamba -n base -c conda-forge
 
 After that, you can replace almost any `conda` command with `mamba` to speed up the process.
 
-## 2. Running `jupyter` notebooks on the server
+## 4. Running `jupyter` notebooks on the server
 
 To run `jupyter` notebooks on the server, you need to install `jupyter` and `jupyterlab`:
 
@@ -49,7 +72,7 @@ where `<PORT>` is the port number you used in the previous command, `<USER>` is 
 
 After that, you can access the notebook at `localhost:<PORT>` in your browser.
 
-## 3. Accesing data on the server locally
+## 5. Accesing data on the server locally
 
 You can make use of `sshfs` to mount the server's file system locally. To do that, run the following command:
 
@@ -65,34 +88,4 @@ For example, to mount the user's home directory to the local directory `~/server
 sshfs <USER>@<SERVER>:/home/<USER> ~/server
 ```
 
-## 4. Running long jobs on the server
-
-To run long jobs on the server, you can use `tmux`. To install `tmux`, run:
-
-```bash
-sudo apt install tmux
-```
-
-To start a new `tmux` session, run:
-
-```bash
-tmux new -t <SESSION_NAME>
-```
-
-where `<SESSION_NAME>` is the name of the session you want to create. For example, `my_session`.
-
-Then, you can run your job in the session. To detach from the session, press `Ctrl + B` and then `D`. Detaching from the session will not stop the job.
-
-To reattach to the session, run:
-
-```bash
-tmux a -t <SESSION_NAME>
-```
-
-where `<SESSION_NAME>` is the name of the session you want to attach to.
-
-TIP: You can use `tmux ls` to list all running sessions.
-
-To exit the session, press `Ctrl + B` and then `X`. Exiting the session will stop any running processes.
-
-To learn more about `tmux`, visit [tmux wiki](https://github.com/tmux/tmux/wiki).
+## 
