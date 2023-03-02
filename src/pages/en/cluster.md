@@ -44,9 +44,10 @@ Node IP’s in the local network are as follows:
 Here is an example entry in .ssh/config file, which utilises a ProxyCommand to skip manually connecting to the jump host
 > ```
 > Host demb_hpc1
-> HostName 192.168.1.181
-> ForwardAgent yes
-> ProxyCommand ssh user@212.87.9.194 nc %h %p
+>   User user
+>   HostName 192.168.1.181
+>   ForwardAgent yes
+>   ProxyCommand ssh user@212.87.9.194 nc %h %p
 > ```
 
 ### Running calculations
