@@ -14,12 +14,12 @@ cd
 ./commands_for_server_and_nat
 ```
 
-Then, to restore the internet on both `mrv` and `deedee`, connect to selected machine and run (with `sudo` privillages):
+Then, to restore the internet on `mrv`, connect to the machine and run (with `sudo` privillages):
 ```
 sudo netplan apply
 ```
 
-## Can't connect to `mrv` and `deedee`
+## Can't connect to `mrv`
 
 1. Use `lshw` to check if **both** network interfaces are enabled
     ```
@@ -102,3 +102,19 @@ sudo netplan apply
     Make sure that the name of the network interface (`ens8191`) is the same as the logical name of the `I210` device. If they are different, change them (be sure to make a backup of all modified configs first).
 
     You may also need to change names in `commands_for_server_and_nat` for internet connectivity, as iptables can sometimes change between reboots.
+
+## No internet access on `HPC[1-3]` after reboot
+
+The first thing you should do is apply commands for iptables and routing, as described above in [No internet after `dexter` reboot](#No internet after `dexter` reboot)
+
+Secondly, check if the stub DNS was properly loaded by `systemd-resolved` service. To do so, check the output of `resolvectl status` command.
+
+It should look like this:
+```shell
+Global
+       Protocols: -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+       resolv.conf mode: stub
+...
+```
+
+If the configuration is different, especially when any DNS servers are listed in the **Globa** section or the mode is different than "stub", try rebooting the machine.
