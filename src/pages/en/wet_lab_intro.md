@@ -1,6 +1,6 @@
 ---
-title: Databases
-description: Databases available on DEMB servers
+title: 
+description: ELI5 - slurm
 layout: ../../layouts/MainLayout.astro
 author: Haelmorn
 ---
