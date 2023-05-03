@@ -11,7 +11,7 @@ td { font-size: 1rem }
 
 ## Important!
 
-Do you frequently wear gloves? Do you know how to grow an overnight culture? Have you ever reckognised a strain by smelling the plate? If the answer to any of those questions was 'yes', you might be a wet lab user. In that case, be sure to read the ![ELI5](./wet_lab_intro.md) guide before proceeding!
+Do you frequently wear gloves? Do you know how to grow an overnight culture? Have you ever reckognised a strain by smelling the plate? If the answer to any of those questions was 'yes', you might be a wet lab user. In that case, be sure to read the ![ELI5](./wet_lab_intro) guide before proceeding!
 
 
 Currently, the DEMB cluster is composed of 4 nodes:
