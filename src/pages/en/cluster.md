@@ -11,7 +11,7 @@ td { font-size: 1rem }
 
 ## Important!
 
-Do you frequently wear gloves? Do you know how to grow an overnight culture? Have you ever reckognised a strain by smelling the plate? If the answer to any of those questions was 'yes', you might be a wet lab user. In that case, be sure to read the ![ELI5](/src/pages/en/wet_lab_intro.md) guide before proceeding!
+Do you frequently wear gloves? Do you know how to grow an overnight culture? Have you ever reckognised a strain by smelling the plate? If the answer to any of those questions was 'yes', you might be a wet lab user. In that case, be sure to read the ![ELI5](./wet_lab_intro.md) guide before proceeding!
 
 
 Currently, the DEMB cluster is composed of 4 nodes:
@@ -24,7 +24,7 @@ The specification of each node can be found in the ()[Available resources] secti
 #### Connecting via SSH
 All connections to the DEMB cluster are handled via SSH. Currently, DeeDee is used as jumphost, as shown below:
 
-![Network graph](/public/assets/network_graph.drawio.svg)
+![Network graph](../../../public/assets/network_graph.drawio.svg)
 
 In order to access one of the computer/storage nodes, you need to connect to the jumphost first, and to target node then:
 
