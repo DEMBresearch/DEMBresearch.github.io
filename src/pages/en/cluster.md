@@ -9,9 +9,10 @@ th { font-size: 1.5rem }
 td { font-size: 1rem }
 </style>
 
-Currently, the DEMB cluster is composed of 4 nodes:
+Currently, the DEMB cluster is composed of 5 nodes:
 
 * 3 compute nodes named HPC[1-3]
+* 1 compute node named GPU1
 * 1 storage node
 The specification of each node can be found in the ()[Available resources] section
 
@@ -36,6 +37,7 @@ Node IP’s in the local network are as follows:
 | HPC1 |	192.168.1.181 |
 | HPC2 |	192.168.1.182 |
 | HPC3 |	192.168.1.183 |
+| GPU1 |	192.168.1.186 |
 |Storage |	192.168.1.111 |
 
 #### Making the connection easier
@@ -81,6 +83,14 @@ sbatch job.sh
 
 ```
 Will launch the command specified inside `job.sh`, using 20 cores, 60GB of RAM on node `hpc3`.
+
+Additionall useful directives:
+```
+#SBATCH --gres=gpu:1         # Request 1 GPU (whole)
+#SBATCH --gres=shards:10     # Request 10 GPU shards (1 shard equals ~1GB of VRAM)
+#SBATCH --ntasks=1           # Run 1 task
+#SBATCH --qos=low            # Submit with low prioroty
+```
 
 ---
 

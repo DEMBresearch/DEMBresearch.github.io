@@ -67,6 +67,20 @@ layout: ../../layouts/MainLayout.astro
 | RAID controller    | LSI MegaRAID 12GSAS/PCIe Secure SAS39xx |
 | Network controller | 2 x NetXtreme BCM5720                   |
 
+
+### GPU1
+
+| Component          | Specification                           |
+|--------------------|-----------------------------------------|
+| CPU                | AMD EPYC 7443P 24C/48T @ 4.60GHz        |
+| RAM                | 512 GB                                  |
+| Storage            | 2 x 12 TB HDD (RAID 1)                  |
+| Network            | 1 Gbps                                  |
+| OS                 | Ubuntu 22.04 LTS                        |
+| GPU                | 2 x NVIDIA A4000 16GB                   |
+| RAID controller    | LSI MegaRAID 12GSAS/PCIe Secure SAS39xx |
+| Network controller | 2 x NetXtreme BCM5720                   |
+
 ### DEMB_Storage
 
 | Component          | Specification                               |
