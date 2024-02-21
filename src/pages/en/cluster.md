@@ -9,6 +9,11 @@ th { font-size: 1.5rem }
 td { font-size: 1rem }
 </style>
 
+### Important!
+
+Do you frequently wear gloves? Do you know how to grow an overnight culture? Have you ever reckognised a strain by smelling the plate? If the answer to any of those questions was 'yes', you might be a wet lab user. In that case, be sure to read the ![ELI5](https://dembresearch.github.io/en/wet_lab_intro/) guide before proceeding!
+
+
 Currently, the DEMB cluster is composed of 5 nodes:
 
 * 3 compute nodes named HPC[1-3]
@@ -20,7 +25,7 @@ The specification of each node can be found in the ()[Available resources] secti
 #### Connecting via SSH
 All connections to the DEMB cluster are handled via SSH. Currently, DeeDee is used as jumphost, as shown below:
 
-![Network graph](/public/assets/network_graph.drawio.svg)
+![Network graph](../../../public/assets/network_graph.drawio.svg)
 
 In order to access one of the computer/storage nodes, you need to connect to the jumphost first, and to target node then:
 
@@ -105,3 +110,50 @@ Running this command will result in an interactive allocation being granted on n
 If you are planning to use this session longer, remember to launch `salloc` inside a `screen` or `tmux` - logging out will terminate the allocation.
 
 Remember to free the allocation after you are done! You can do so by calling `exit` or simply loggin out of the session.
+
+### Example
+
+Here is an example of metagenomic assembly using megahit on the DEMB cluster. It utilises all 3 compute nodes, and assembles the metagenomes in parallel.
+This specific script was used to assemble >100 metagenomes from Illumina sequencing. The task took ~12h to complete
+
+```shell
+#!/bin/bash
+
+# Set the directory containing the fastq.gz files
+fastq_dir=/path/to/fastq/files
+
+# Set the output directory
+output_dir=/path/to/output
+
+# Loop through the fastq.gz files in the directory - modify the pattern to match your files
+for file in ${fastq_dir}/*_R1.fastq.gz
+do
+  # Get the base name of the file
+  base=$(basename ${file} _R1.fastq.gz)
+
+  # Submit the MEGAHIT job
+  sbatch <<EOT
+#!/bin/bash
+#SBATCH --job-name=${base}_megahit
+#SBATCH --output=${base}_megahit.out
+#SBATCH --error=${base}_megahit.err
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=20
+#SBATCH --mem=60G
+#SBATCH --time=24:00:00
+
+# Load the MEGAHIT module
+source /nfs/users/<user>/miniconda3/bin/activate megahit
+
+# Run MEGAHIT
+megahit -1 ${fastq_dir}/${base}_R1.fastq.gz -2 ${fastq_dir}/${base}_R2.fastq.gz -o ${output_dir}/${base} --num-cpu-threads 20
+EOT
+done
+```
+
+**Important to remember:**
+* For the script to be able to utilise all nodes, both input and output directories have to be accessible from all nodes, i.e. somewhere on the `nfs` share.
+* The script assumes that the `megahit` module is available on all nodes. This can be achieved by either installing the module on all nodes, or by using a shared conda environment (which is what I did in this case).
+* stdout and stderr are redirected to separate files for each job. They can be found in the directory from which the script was launched.
+* The `--nodes` directive dictates how many nodes are used per job, not in total
+* In this case, I am using 20 cores per job and 60GB of RAM, meaning I am able to run 2 job per node, or 6 in total, at the same time.
