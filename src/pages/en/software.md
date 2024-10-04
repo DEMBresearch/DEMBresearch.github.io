@@ -29,6 +29,7 @@ Anything missing? Contact one of the maintainers:
 | bwa-mem2 | 2.2.1 | /nfs/opt/bwa-mem2-2.2.1 | KC | ✓ | |
 | checkm | 1.2.1 | /nfs/opt/singularity_images/checkm.sif | KC | | ✓ |
 | checkv | v1.0.3 | /nfs/opt/singularity_images/checkv.sif | KC | | ✓ |
+| clipKIT | v1.3 | /nfs/opt/ClipKIT | KC | |  |
 | comebin | v1.0.4 | /nfs/opt/singularity_images/comebin.sif | KC | | ✓ |
 | coverm | 0.7.0 | /nfs/opt/coverm-0.7.0 | KC | ✓ | |
 | dastool | 1.1.7 | /nfs/opt/singularity_images/dastool.sif | KC | | ✓ |
